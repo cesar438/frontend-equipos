@@ -1,0 +1,85 @@
+<c-row ngPreservewhitespaces>
+    <c-col xs="12">
+        <c-card class="mb-4">
+            <c-card-header>
+              <strong>Formulario de Equipos</strong>
+            </c-card-header>
+            <c-card-body>
+                <form cForm>
+                  <div class="mb-3">
+                    <label cLabel for="Nombre">Nombre</label>
+                    <input cFormControl
+                           id="Nombre"
+                           placeholder="Ingresar Nombre"
+                           type="text"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label cLabel for="Tipo">Tipo</label>
+                    <input cFormControl
+                           id="Tipo"
+                           placeholder="Ingresar Tipo"
+                           type="text"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label cLabel for="observaciones">Observaciones</label>
+                    <input cFormControl
+                           id="observaciones"
+                           placeholder="Ingresar Observaciones"
+                           type="text"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label cLabel for="cantidad">Cantidad</label>
+                    <input cFormControl
+                           id="cantidad"
+                           placeholder="Ingresar Cantidad"
+                           type="number"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label cLabel for="fecha">Fecha</label>
+                    <input cFormControl
+                           id="fecha"
+                           placeholder="Ingresar Fecha"
+                           type="text"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label cLabel for="usuario">Usuario</label>
+                    <select aria-label="Seleccione Usuario" cSelect>
+                        <option value="1">julia</option>
+                        <option value="2">Esteban</option>
+                        <option value="3">Esther</option>
+                    </select>
+                  </div>
+                  <button cButton class="me-1" color="primary" type="submit">
+                    Guardar
+                  </button>
+
+                </form>
+            </c-card-body>
+          </c-card>
+    </c-col>
+    <c-col xs="12">
+        <table cTable>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td><button cButton color="warning" variant="outline">Editar</button><button cButton color="danger" variant="outline">Eliminar</button></td>
+            </tr>        
+            </tbody>
+          </table>
+    </c-col>
+</c-row>
