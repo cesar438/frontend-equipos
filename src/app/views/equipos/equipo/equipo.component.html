@@ -12,6 +12,8 @@
                            id="nombre"
                            placeholder="Ingresar Nombre"
                            type="text"
+                           [(ngModel)] = "equipoModelo.Nombre"
+                           name="nombre"
                     />
                   </div>
                   <div class="mb-3">
@@ -20,6 +22,8 @@
                            id="tipo"
                            placeholder="Ingresar Tipo"
                            type="text"
+                           [(ngModel)] = "equipoModelo.Tipo"
+                           name="tipo"
                     />
                   </div>
                   <div class="mb-3">
@@ -28,6 +32,8 @@
                            id="observaciones"
                            placeholder="Ingresar Observaciones"
                            type="text"
+                           [(ngModel)] = "equipoModelo.Observaciones"
+                           name="observaciones"
                     />
                   </div>
                   <div class="mb-3">
@@ -36,6 +42,8 @@
                            id="cantidad"
                            placeholder="Ingresar Cantidad"
                            type="number"
+                           [(ngModel)] = "equipoModelo.Cantidad"
+                           name="cantidad"
                     />
                   </div>
                   <div class="mb-3">
@@ -44,17 +52,26 @@
                            id="fecha"
                            placeholder="Ingresar Fecha"
                            type="text"
+                           [(ngModel)] = "equipoModelo.Fecha"
+                           name="fecha"
                     />
                   </div>
                   <div class="mb-3">
                     <label cLabel for="usuario">Usuario</label>
-                    <select aria-label="Seleccione Usuario" cSelect>
-                        <option value="1">julia</option>
+                    <input cFormControl
+                    id="usuario"
+                    type="text"
+                    [(ngModel)] = "equipoModelo.Usuario"
+                    name="usuario"
+                    />
+                   <!--<select aria-label="Seleccione Usuario" cSelect>
+                        <option></option>
+                        <option value="664d3822cde7a71733c588e4">xiac</option>
                         <option value="2">Esteban</option>
                         <option value="3">Esther</option>
-                    </select>
+                    </select>-->
                   </div>
-                  <button cButton class="me-1" color="primary" type="submit">
+                  <button (click)="guardarEquipo()" cButton class="me-1" color="primary" type="submit">
                     Guardar
                   </button>
 
@@ -68,17 +85,21 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Nombre</th>
-              <th scope="col">Usuario</th>
+              <th scope="col">Tipo</th>
               <th scope="col">Acciones</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td><button cButton color="warning" variant="outline">Editar</button><button cButton color="danger" variant="outline">Eliminar</button></td>
-            </tr>        
+              @for ( item of listaEquipos; track item;){
+                <tr>
+                  <th scope="row">1</th>
+                  <td>{{item.Nombre}}</td>
+                  <td>{{item.Tipo}}</td>
+                  <td>
+                    <button cButton color="warning" variant="outline"(click)="verEquipo(item)">Editar</button>
+                    <button (click)="eliminarEquipo(item)"cButton color="danger" variant="outline">Eliminar</button></td>
+                </tr>   
+              }        
             </tbody>
           </table>
     </c-col>
